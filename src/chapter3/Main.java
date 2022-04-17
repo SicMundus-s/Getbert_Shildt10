@@ -1,8 +1,8 @@
 package chapter3;
-
-public class Main {
+class Main {
     public static void main(String args[]) {
         int myArray[][] = new int[5][6];
+        int[] a1 = new int[3];
         int k = 1;
 
         for (int count = 0; count < myArray.length; ++count)
