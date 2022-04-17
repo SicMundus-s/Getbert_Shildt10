@@ -1,4 +1,4 @@
-package chapter04;
+package chapter04_Boolean_operations;
 
 public class LogicOperation {
     boolean m_a = true; //  ¬ отличие от плюсов принимает только true/false

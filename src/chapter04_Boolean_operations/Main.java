@@ -1,4 +1,4 @@
-package chapter04;
+package chapter04_Boolean_operations;
 
 class Main {
     public static void main(String args[]) {    // Продемонстрировать применение поразрядных логических операций
