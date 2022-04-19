@@ -1,24 +1,25 @@
 package chapter06_Classes;
 
-//В этом классе определяется целочисленный стек, где
-// можно хранить до 10 целочисленных значений
+//Р’ СЌС‚РѕРј РєР»Р°СЃСЃРµ РѕРїСЂРµРґРµР»СЏРµС‚СЃСЏ С†РµР»РѕС‡РёСЃР»РµРЅРЅС‹Р№ СЃС‚РµРє, РіРґРµ
+// РјРѕР¶РЅРѕ С…СЂР°РЅРёС‚СЊ РґРѕ 10 С†РµР»РѕС‡РёСЃР»РµРЅРЅС‹С… Р·РЅР°С‡РµРЅРёР№
 class Stack {
-    int stck[] = new int[10];
+    int stck[]; // Р”РѕСЃС‚СѓРї РѕС‚РєСЂС‹С‚ РЅР°РјРµСЂРµРЅРЅРѕ
     private int tos;
 
-    Stack() {
+    Stack(int size) {
+        stck = new int[size];
         tos = -1;
     }
 
     void push(int item) {
-        if (tos == 9) {
-            System.out.println("Стек заполнен");
+        if (tos == stck.length - 1) {
+            System.out.println("РЎС‚РµРє Р·Р°РїРѕР»РЅРµРЅ");
         } else
             stck[++tos] = item;
     }
         int pop() {
         if(tos < 0) {
-            System.out.println("Стек не загружен.");
+            System.out.println("РЎС‚РµРє РЅРµ Р·Р°РіСЂСѓР¶РµРЅ.");
             return 0;
         }
         else

@@ -6,17 +6,17 @@ public class Main {
         Box myBox = new Box(1.0, 2.0, 3.0);
         System.out.println(myBox.volume());
 
-        Stack myStack = new Stack();
+        Stack myStack = new Stack(10);
 
-        myStack.pop();
+        // myStack.pop();
 
-        for(int count = 0; count < 10; ++count) {
-            myStack.push(count * 2);
+        for(int count = 0; count < myStack.stck.length; ++count) {
+            myStack.push(count);
         }
-        for(int x : myStack.stck) {
+        /*for(int x : myStack.stck) {
             System.out.println(x);
-        }
-        for(int count = 0; count < 10; ++count){
+        } */
+        for(int count = 0; count < myStack.stck.length; ++count){
             System.out.println(myStack.pop());
         }
 

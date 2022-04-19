@@ -3,44 +3,44 @@ package chapter05_If_switch_operations;
 public class Main {
     public static void main(String args[])
     {
-        int month = 4; // Апрель
+        int month = 4; // РђРїСЂРµР»СЊ
         String season;
         if (month == 12 || month == 1 || month == 2)
-        season = "зиме" ;
+        season = "Р·РёРјРµ" ;
         else if(month == 3 || month == 4 || month == 5)
-        season = "весне";
+        season = "РІРµСЃРЅРµ";
         else if(month == 6 || month == 7 || month == 8)
-        season = "лету";
+        season = "Р»РµС‚Сѓ";
         else if(month == 9 || month == 10 || month == 11)
-        season = "осени";
+        season = "РѕСЃРµРЅРё";
         else
-        season = "вымышленным месяцам";
-        System.out.println("Время года: " + season);
+        season = "РІС‹РјС‹С€Р»РµРЅРЅС‹Рј РјРµСЃСЏС†Р°Рј";
+        System.out.println("Р’СЂРµРјСЏ РіРѕРґР°: " + season);
 
         switch (month)
         {
             case 12:
             case 1:
             case 2:
-                System.out.println("зима");
+                System.out.println("Р·РёРјР°");
                 break;
             case 3:
             case 4:
             case 5:
-                System.out.println("Весна");
+                System.out.println("Р’РµСЃРЅР°");
                 break;
             case 6:
             case 7:
             case 8:
-                System.out.println("Лето");
+                System.out.println("Р›РµС‚Рѕ");
                 break;
             case 9:
             case 10:
             case 11:
-                System.out.println("осень");
+                System.out.println("РѕСЃРµРЅСЊ");
                 break;
             default:
-                System.out.println("Вымышленный месяц");
+                System.out.println("Р’С‹РјС‹С€Р»РµРЅРЅС‹Р№ РјРµСЃСЏС†");
 
                 // while_for test = new while_for();
                 // test.chois('1');
