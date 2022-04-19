@@ -1,7 +1,7 @@
 package chapter04_Boolean_operations;
 
 class Main {
-    public static void main(String args[]) {    // Продемонстрировать применение поразрядных логических операций
+    public static void main(String args[]) {    // РџСЂРѕРґРµРјРѕРЅСЃС‚СЂРёСЂРѕРІР°С‚СЊ РїСЂРёРјРµРЅРµРЅРёРµ РїРѕСЂР°Р·СЂСЏРґРЅС‹С… Р»РѕРіРёС‡РµСЃРєРёС… РѕРїРµСЂР°С†РёР№
 
         String binary[] = {
                 "0000", "0001", "0010", "0011", "0100", "0101",
@@ -10,14 +10,14 @@ class Main {
         };
         int a = 3;
         int b = 6;
-        int c = a | b; // Побитовая или
-        int d = a & b;// Побитовая и
-        int e = a ^ b; // Побитовая иск.или
+        int c = a | b; // РџРѕР±РёС‚РѕРІР°СЏ РёР»Рё
+        int d = a & b;// РџРѕР±РёС‚РѕРІР°СЏ Рё
+        int e = a ^ b; // РџРѕР±РёС‚РѕРІР°СЏ РёСЃРє.РёР»Рё
         int f = (~a & b) | (a & ~b);
         int g = ~a & 0x0f;
         int h = 32;
-        int j = h << 2; // Сдвиг влево
-        int k = h >> 2; // Сдвиг вправо
+        int j = h << 2; // РЎРґРІРёРі РІР»РµРІРѕ
+        int k = h >> 2; // РЎРґРІРёРі РІРїСЂР°РІРѕ
         System.out.println(" a = " + binary[a]);
         System.out.println(" b = " + binary[b]);
         System.out.println(" a | b " + binary[c]);
