@@ -1,6 +1,5 @@
 package chapter12_enumerations_autoboxing_and_annotations;
 
-import java.lang.annotation.*;
 import java.lang.reflect.*;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

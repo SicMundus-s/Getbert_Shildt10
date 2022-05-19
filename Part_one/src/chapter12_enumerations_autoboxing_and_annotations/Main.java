@@ -1,6 +1,5 @@
 package chapter12_enumerations_autoboxing_and_annotations;
 
-import java.util.Scanner;
 enum Apple {
     Jonathan(10), GoldenDel(15), RedDel(20), Winesap(25), Cortland(30);
     private int price;
