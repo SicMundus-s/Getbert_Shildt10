@@ -73,7 +73,7 @@ class FourD extends ThreeD {
     }
 }
 
-class Coords<T extends TwoD> {
+class   Coords<T extends TwoD> {
     T[] coords;
 
     Coords(T[] o) { coords = o; }
