@@ -18,15 +18,15 @@ public class Main {
 
 class MyThread extends Thread {
 
-    private volatile boolean running = true; // volatile запрещает кэшироваться переменной и сама переменная читается из общей памяти
-    @Override                                // Таким образом переменная синхранизируется между потоками.
+    private volatile boolean running = true; // volatile Р·Р°РїСЂРµС‰Р°РµС‚ РєСЌС€РёСЂРѕРІР°С‚СЊСЃСЏ РїРµСЂРµРјРµРЅРЅРѕР№ Рё СЃР°РјР° РїРµСЂРµРјРµРЅРЅР°СЏ С‡РёС‚Р°РµС‚СЃСЏ РёР· РѕР±С‰РµР№ РїР°РјСЏС‚Рё
+    @Override                                // РўР°РєРёРј РѕР±СЂР°Р·РѕРј РїРµСЂРµРјРµРЅРЅР°СЏ СЃРёРЅС…СЂР°РЅРёР·РёСЂСѓРµС‚СЃСЏ РјРµР¶РґСѓ РїРѕС‚РѕРєР°РјРё.
     public void run() {
         while (running) {
             System.out.println("Hello");
             try {
                 Thread.sleep(1000);
             }catch (InterruptedException e) {
-                System.out.println("Ошибка в MyThread");
+                System.out.println("РћС€РёР±РєР° РІ MyThread");
             }
 
         }

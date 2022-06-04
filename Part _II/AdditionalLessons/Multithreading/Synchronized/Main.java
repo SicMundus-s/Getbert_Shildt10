@@ -3,7 +3,7 @@ package Synchronized;
 public class Main {
     private  int counter;
     public static void main(String args[]) throws InterruptedException {
-       // Main test = new Main(); // Каждому объкту внедряется Monitor
+       // Main test = new Main(); // РљР°Р¶РґРѕРјСѓ РѕР±СЉРєС‚Сѓ РІРЅРµРґСЂСЏРµС‚СЃСЏ Monitor
         // test.doWork();
 
         long before = System.currentTimeMillis();
@@ -34,7 +34,7 @@ public class Main {
             @Override
             public void run() {
                 for(int i = 0; i < 10000; i++ ) {
-                    //counter++;  // counter = counter + 1 операция не атомарна(Не выполняется за один такт)
+                    //counter++;  // counter = counter + 1 РѕРїРµСЂР°С†РёСЏ РЅРµ Р°С‚РѕРјР°СЂРЅР°(РќРµ РІС‹РїРѕР»РЅСЏРµС‚СЃСЏ Р·Р° РѕРґРёРЅ С‚Р°РєС‚)
                     increment();
                 }
             }
@@ -43,7 +43,7 @@ public class Main {
         thread.start();
         thread1.start();
 
-        thread.join(); // Дождаться окончания потока
+        thread.join(); // Р”РѕР¶РґР°С‚СЊСЃСЏ РѕРєРѕРЅС‡Р°РЅРёСЏ РїРѕС‚РѕРєР°
         thread1.join();
         System.out.println(counter);
     }

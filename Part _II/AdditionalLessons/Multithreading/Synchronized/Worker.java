@@ -6,8 +6,8 @@ import java.util.Random;
 
 public class Worker {
 
-    Object lock1 = new Object(); // Этот объект получает свой монитор
-    Object lock2 = new Object(); // И этот объект получает свой монитор
+    Object lock1 = new Object(); // Р­С‚РѕС‚ РѕР±СЉРµРєС‚ РїРѕР»СѓС‡Р°РµС‚ СЃРІРѕР№ РјРѕРЅРёС‚РѕСЂ
+    Object lock2 = new Object(); // Р СЌС‚РѕС‚ РѕР±СЉРµРєС‚ РїРѕР»СѓС‡Р°РµС‚ СЃРІРѕР№ РјРѕРЅРёС‚РѕСЂ
     Random random = new Random();
     List<Integer> myList1 = new ArrayList<>();
     List<Integer> myList2 = new ArrayList<>();

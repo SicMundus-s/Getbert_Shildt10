@@ -49,7 +49,7 @@ class ProducerConsumer {
                 lock.wait();
             }
             queue.add(value++);
-            lock.notify(); // Уведомляет wait из consumer о нахождение элемента в очереди
+            lock.notify(); // РЈРІРµРґРѕРјР»СЏРµС‚ wait РёР· consumer Рѕ РЅР°С…РѕР¶РґРµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ РѕС‡РµСЂРµРґРё
             }
         }
     }
@@ -60,10 +60,10 @@ class ProducerConsumer {
                     lock.wait();
                 }
 
-                int value = queue.poll(); // Вытаскивает элемент из очереди
+                int value = queue.poll(); // Р’С‹С‚Р°СЃРєРёРІР°РµС‚ СЌР»РµРјРµРЅС‚ РёР· РѕС‡РµСЂРµРґРё
                 System.out.println(value);
                 System.out.println("Queue size is: " + queue.size());
-                lock.notify(); // Уведомляет wait в produce о освобождение места в очереди
+                lock.notify(); // РЈРІРµРґРѕРјР»СЏРµС‚ wait РІ produce Рѕ РѕСЃРІРѕР±РѕР¶РґРµРЅРёРµ РјРµСЃС‚Р° РІ РѕС‡РµСЂРµРґРё
             }
             Thread.sleep(1000);
         }

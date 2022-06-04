@@ -1,4 +1,4 @@
-package WaifAndNotify;
+package WaitAndNotify;
 
 import java.util.Scanner;
 
@@ -40,8 +40,8 @@ class WaitAndNotify {
     public void produce() throws InterruptedException {
     synchronized (this) {
         System.out.println("Producer thread started...");
-        wait(); // Вызывается только в пределах синхранизованого блока в объекте this(this.wait)
-        // Ожидает вызова notify(Уведомлять)
+        wait(); // Р’С‹Р·С‹РІР°РµС‚СЃСЏ С‚РѕР»СЊРєРѕ РІ РїСЂРµРґРµР»Р°С… СЃРёРЅС…СЂР°РЅРёР·РѕРІР°РЅРѕРіРѕ Р±Р»РѕРєР° РІ РѕР±СЉРµРєС‚Рµ this(this.wait)
+        // РћР¶РёРґР°РµС‚ РІС‹Р·РѕРІР° notify(РЈРІРµРґРѕРјР»СЏС‚СЊ)
         System.out.println("Producer thread resumed...");
         }
     }
@@ -52,7 +52,7 @@ class WaitAndNotify {
         synchronized (this) {
             System.out.println("Waiting for return key pressed");
             scanner.nextLine();
-            notify(); // Активирует приостановленный поток
+            notify(); // РђРєС‚РёРІРёСЂСѓРµС‚ РїСЂРёРѕСЃС‚Р°РЅРѕРІР»РµРЅРЅС‹Р№ РїРѕС‚РѕРє
         }
 
     }

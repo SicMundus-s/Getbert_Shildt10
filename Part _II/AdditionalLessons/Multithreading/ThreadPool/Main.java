@@ -6,14 +6,14 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String args[]) throws InterruptedException {
-        ExecutorService executorService = Executors.newFixedThreadPool(5); // Пул потоков
+        ExecutorService executorService = Executors.newFixedThreadPool(5); // РџСѓР» РїРѕС‚РѕРєРѕРІ
 
         for(int i = 0; i < 5; i++) {
             executorService.submit(new Work(i));
         }
-        executorService.shutdown(); // прекращает набор задач(Work) и переходит к исполнению
+        executorService.shutdown(); // РїСЂРµРєСЂР°С‰Р°РµС‚ РЅР°Р±РѕСЂ Р·Р°РґР°С‡(Work) Рё РїРµСЂРµС…РѕРґРёС‚ Рє РёСЃРїРѕР»РЅРµРЅРёСЋ
         System.out.println("All tasks submitted");
-        executorService.awaitTermination(1, TimeUnit.DAYS); // Прекратит выполнение задач после истечения указанного времени
+        executorService.awaitTermination(1, TimeUnit.DAYS); // РџСЂРµРєСЂР°С‚РёС‚ РІС‹РїРѕР»РЅРµРЅРёРµ Р·Р°РґР°С‡ РїРѕСЃР»Рµ РёСЃС‚РµС‡РµРЅРёСЏ СѓРєР°Р·Р°РЅРЅРѕРіРѕ РІСЂРµРјРµРЅРё
     }
 }
 
