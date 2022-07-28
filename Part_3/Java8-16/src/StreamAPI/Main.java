@@ -162,5 +162,16 @@ public class Main {
             System.out.println();
         }
 
+        /**
+         *  parallel
+         */
+
+        List<String> people3 = Arrays.asList("Tom","Bob", "Sam", "Kate", "Tim");
+
+        System.out.println("Последовательный поток");
+        people3.stream().filter(p->p.length()==3).forEach(System.out::println);
+
+        System.out.println("\nПараллельный поток");
+        people3.parallelStream().filter(p->p.length()==3).forEach(System.out::println);
     }
 }
