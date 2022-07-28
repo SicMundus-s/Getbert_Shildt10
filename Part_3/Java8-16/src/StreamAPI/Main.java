@@ -3,6 +3,7 @@ package StreamAPI;
 import java.util.*;
 import java.util.function.IntPredicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
@@ -173,5 +174,49 @@ public class Main {
 
         System.out.println("\nПараллельный поток");
         people3.parallelStream().filter(p->p.length()==3).forEach(System.out::println);
+
+        /**
+         * reduce - проводит бинарную операцию над элементами
+         */
+
+        /*
+        Простой вывод суммы
+         */
+        // Creating list of integers
+        List<Integer> array = Arrays.asList(-2, 0, 4, 6, 8);
+
+        // Finding sum of all elements
+        int sum = array.stream().reduce(0,
+                (element1, element2) -> element1 + element2);
+
+        // Displaying sum of all elements
+        System.out.println("The sum of all elements is " + sum);
+
+        /*
+        Умножение чисел друг на друга
+         */
+        int product = IntStream.range(2, 8)
+                .reduce((num1, num2) -> num1 * num2)
+                .orElse(-1);
+
+        // Displaying the product
+        System.out.println("The product is : " + product);
+
+        /*
+        String - конкатенация строк
+         */
+        // String array
+        String[] array1 = { "Geeks", "for", "Geeks" };
+
+        // The result of the reduce() method is
+        // an Optional because the list on which
+        // reduce() is called may be empty.
+        Optional<String> String_combine = Arrays.stream(array1)
+                .reduce((str1, str2)
+                        -> str1 + "-" + str2);
+
+        // Displaying the combined String
+        if (String_combine.isPresent()) {
+            System.out.println(String_combine.get());
     }
 }
