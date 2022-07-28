@@ -105,7 +105,19 @@ public class Main {
         System.out.println(max.get());  // 9
 
         /**
-         *
+         * Optional - обёртка над результатом операции
+         * Метод orElse() позволяет определить альтернативное значение, которое будет возвращаться, если Optional не получит из потока какого-нибудь значения
+         * Метод orElseGet() позволяет задать функцию, которая будет возвращать значение по умолчанию
+         * Еще один метод - orElseThrow позволяет сгенерировать исключение, если Optional не содержит значения
+         * Метод ifPresent() определяет действия со значением в Optional, если значение имеется:
          */
+        // список numbers пустой
+        ArrayList<Integer> numbersEmpty = new ArrayList<Integer>();
+        Optional<Integer> minEmpty = numbersEmpty.stream().min(Integer::compare);
+        if(minEmpty.isPresent()) // Возвращает true если объект != null
+            System.out.println(minEmpty.get());  // java.util.NoSuchElementException
+
+        minEmpty.ifPresent(v -> System.out.println(v));
+
     }
 }
