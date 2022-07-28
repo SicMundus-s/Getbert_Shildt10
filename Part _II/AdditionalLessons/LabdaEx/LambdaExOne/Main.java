@@ -27,7 +27,7 @@ public class Main {
     public static void main(String args[]) {
         Runner runner = new Runner();
 //        runner.run(new ExectubleImplementation()); // Первый способ через создание класса
-        runner.run(new Exectuble() { // Второй способ - создание ананимного класса имплементиющего интерфейс Exectuble и переопределение метода execute
+        runner.run(new Exectuble() { // Второй способ - создание анонимного класса имплементиющего интерфейс Exectuble и переопределение метода execute
             @Override
             public int execute(int x, double y) {
                 System.out.println("Hello 2");

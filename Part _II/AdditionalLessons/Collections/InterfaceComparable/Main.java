@@ -1,4 +1,4 @@
-package InterfaceComparable;
+ package InterfaceComparable;
 
 import java.util.*;
 

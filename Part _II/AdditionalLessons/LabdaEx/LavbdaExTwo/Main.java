@@ -39,7 +39,7 @@ public class Main {
         int sum = Arrays.stream(arr).reduce((acc, b) -> acc + b).getAsInt(); // Сжимает массив в одно число(сумма всех элементов)
         int sum2 = list.stream().reduce((acc, b) -> acc * b).get();
 
-        // Так же можно вызывать очередб методов
+        // Так же можно вызывать очередь методов
         list = list.stream().filter(a -> a != 0).map(a -> a * 2).toList(); // В данном случае мы филтруем все элементы массива
         // И после с помощью map выводим хи умноженными на 2
         System.out.println(list);
