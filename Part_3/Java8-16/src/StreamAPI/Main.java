@@ -2,6 +2,7 @@ package StreamAPI;
 
 import java.util.*;
 import java.util.function.IntPredicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
@@ -118,6 +119,48 @@ public class Main {
             System.out.println(minEmpty.get());  // java.util.NoSuchElementException
 
         minEmpty.ifPresent(v -> System.out.println(v));
+
+
+        /**
+         * Метод - collect. Преобразует поток в список(Возможен вариант - toList)
+         */
+
+        List<String> phones = new ArrayList<String>();
+        Collections.addAll(phones, "iPhone 8", "HTC U12", "Huawei Nexus 6P",
+                "Samsung Galaxy S9", "LG G6", "Xiaomi MI6", "ASUS Zenfone 2",
+                "Sony Xperia Z5", "Meizu Pro 6", "Lenovo S850");
+
+        List<String> filteredPhones = phones.stream()
+                .filter(s -> s.length() < 10).toList();
+
+        for(String s : filteredPhones){
+            System.out.println(s);
+        }
+
+
+        /**
+         * Group
+         */
+
+
+        Stream<Phone> phoneStream2 = Stream.of(new Phone("iPhone X", "Apple", 600),
+                new Phone("Pixel 2", "Google", 500),
+                new Phone("iPhone 8", "Apple",450),
+                new Phone("Galaxy S9", "Samsung", 440),
+                new Phone("Galaxy S8", "Samsung", 340));
+
+        Map<String, List<Phone>> phonesByCompany = phoneStream2.collect(
+                Collectors.groupingBy(Phone::getCompany));
+
+        for(Map.Entry<String, List<Phone>> item : phonesByCompany.entrySet()){
+
+            System.out.println(item.getKey());
+            for(Phone phone : item.getValue()){
+
+                System.out.println(phone.getName());
+            }
+            System.out.println();
+        }
 
     }
 }
