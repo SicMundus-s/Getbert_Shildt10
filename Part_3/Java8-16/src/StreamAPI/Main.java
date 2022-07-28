@@ -37,7 +37,17 @@ public class Main {
 
         Stream.concat(people1, people2).forEach(n -> System.out.println(n));
 
-        
 
+        /**
+         * // Skip - скипает (n) элементов потока. limit (n) ставит ограничения на кол-во элементов потока
+         */
+        Stream<String> phoneStream1 = Stream.of("iPhone 6 S", "Lumia 950", "Samsung Galaxy S 6", "LG G 4", "Nexus 7");
+
+        phoneStream1.skip(1)
+                .limit(2)
+                .forEach(s->System.out.println(s));
+
+
+        
     }
 }
