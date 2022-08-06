@@ -22,7 +22,7 @@ public class Main {
 
 
         /**
-         * // Возвращает только уникальные элементы потока
+         * // Возвращает только уникальные элементы потока1
          */
         Stream<String> people = Stream.of("Tom", "Bob", "Sam", "Tom", "Alice", "Kate", "Sam");
         people.distinct().forEach(p -> System.out.println(p));
