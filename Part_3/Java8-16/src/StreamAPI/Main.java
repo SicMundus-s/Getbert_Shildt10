@@ -16,20 +16,20 @@ public class Main {
 
         phoneStream.sorted(new PhomeComporator())
                 .forEach(p -> System.out.printf("%s (%s) - %d \n",
-                        p.getName(), p.getCompany(), p.getPrice())); // Сортирует массив
+                        p.getName(), p.getCompany(), p.getPrice())); // РЎРѕСЂС‚РёСЂСѓРµС‚ РјР°СЃСЃРёРІ
 
-        //phoneStream.map(p -> "p.getName()" + p.getName() + "p.getCompany()" + p.getCompany()).forEach(p -> System.out.println(p)); // Возвращает изменённый вид потока
+        //phoneStream.map(p -> "p.getName()" + p.getName() + "p.getCompany()" + p.getCompany()).forEach(p -> System.out.println(p)); // Р’РѕР·РІСЂР°С‰Р°РµС‚ РёР·РјРµРЅС‘РЅРЅС‹Р№ РІРёРґ РїРѕС‚РѕРєР°
 
 
         /**
-         * // Возвращает только уникальные элементы потока1
+         * // Р’РѕР·РІСЂР°С‰Р°РµС‚ С‚РѕР»СЊРєРѕ СѓРЅРёРєР°Р»СЊРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ РїРѕС‚РѕРєР°1
          */
         Stream<String> people = Stream.of("Tom", "Bob", "Sam", "Tom", "Alice", "Kate", "Sam");
         people.distinct().forEach(p -> System.out.println(p));
 
 
         /**
-         * // Возвращает объединённый поток
+         * // Р’РѕР·РІСЂР°С‰Р°РµС‚ РѕР±СЉРµРґРёРЅС‘РЅРЅС‹Р№ РїРѕС‚РѕРє
          */
         Stream<String> people1 = Stream.of("Tom", "Bob", "Sam");
         Stream<String> people2 = Stream.of("Alice", "Kate", "Sam");
@@ -38,7 +38,7 @@ public class Main {
 
 
         /**
-         * // Skip - скипает (n) элементов потока. limit (n) ставит ограничения на кол-во элементов потока
+         * // Skip - СЃРєРёРїР°РµС‚ (n) СЌР»РµРјРµРЅС‚РѕРІ РїРѕС‚РѕРєР°. limit (n) СЃС‚Р°РІРёС‚ РѕРіСЂР°РЅРёС‡РµРЅРёСЏ РЅР° РєРѕР»-РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РїРѕС‚РѕРєР°
          */
         Stream<String> phoneStream1 = Stream.of("iPhone 6 S", "Lumia 950", "Samsung Galaxy S 6", "LG G 4", "Nexus 7");
 
@@ -48,17 +48,17 @@ public class Main {
 
 
         /**
-         * count - возвращает кол-во элементов в массиве
+         * count - РІРѕР·РІСЂР°С‰Р°РµС‚ РєРѕР»-РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ РјР°СЃСЃРёРІРµ
          */
         ArrayList<String> names = new ArrayList<String>();
         names.addAll(Arrays.asList(new String[]{"Tom", "Sam", "Bob", "Alice"}));
         System.out.println(names.stream().count());  // 4
 
-        // количество элементов с длиной не больше 3 символов
+        // РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ СЃ РґР»РёРЅРѕР№ РЅРµ Р±РѕР»СЊС€Рµ 3 СЃРёРјРІРѕР»РѕРІ
         System.out.println(names.stream().filter(n->n.length()<=3).count());  // 3
 
         /**
-         * Метод findFirst() извлекает из потока первый элемент, а findAny() извлекает случайный объект из потока (нередко так же первый):
+         * РњРµС‚РѕРґ findFirst() РёР·РІР»РµРєР°РµС‚ РёР· РїРѕС‚РѕРєР° РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚, Р° findAny() РёР·РІР»РµРєР°РµС‚ СЃР»СѓС‡Р°Р№РЅС‹Р№ РѕР±СЉРµРєС‚ РёР· РїРѕС‚РѕРєР° (РЅРµСЂРµРґРєРѕ С‚Р°Рє Р¶Рµ РїРµСЂРІС‹Р№):
          */
 
         ArrayList<String> names1 = new ArrayList<>();
@@ -71,30 +71,30 @@ public class Main {
         System.out.println(any.get());    // Tom
 
         /**
-         * boolean allMatch(Predicate<? super T> predicate): возвращает true, если все элементы потока удовлетворяют условию в предикате
+         * boolean allMatch(Predicate<? super T> predicate): РІРѕР·РІСЂР°С‰Р°РµС‚ true, РµСЃР»Рё РІСЃРµ СЌР»РµРјРµРЅС‚С‹ РїРѕС‚РѕРєР° СѓРґРѕРІР»РµС‚РІРѕСЂСЏСЋС‚ СѓСЃР»РѕРІРёСЋ РІ РїСЂРµРґРёРєР°С‚Рµ
          *
-         * boolean anyMatch(Predicate<? super T> predicate): возвращает true, если хоть один элемент потока удовлетворяют условию в предикате
+         * boolean anyMatch(Predicate<? super T> predicate): РІРѕР·РІСЂР°С‰Р°РµС‚ true, РµСЃР»Рё С…РѕС‚СЊ РѕРґРёРЅ СЌР»РµРјРµРЅС‚ РїРѕС‚РѕРєР° СѓРґРѕРІР»РµС‚РІРѕСЂСЏСЋС‚ СѓСЃР»РѕРІРёСЋ РІ РїСЂРµРґРёРєР°С‚Рµ
          *
-         * boolean noneMatch(Predicate<? super T> predicate): возвращает true, если ни один из элементов в потоке не удовлетворяет условию в предикате
+         * boolean noneMatch(Predicate<? super T> predicate): РІРѕР·РІСЂР°С‰Р°РµС‚ true, РµСЃР»Рё РЅРё РѕРґРёРЅ РёР· СЌР»РµРјРµРЅС‚РѕРІ РІ РїРѕС‚РѕРєРµ РЅРµ СѓРґРѕРІР»РµС‚РІРѕСЂСЏРµС‚ СѓСЃР»РѕРІРёСЋ РІ РїСЂРµРґРёРєР°С‚Рµ
          */
 
         ArrayList<String> names2 = new ArrayList<>();
         names.addAll(Arrays.asList("Tom", "Sam", "Bob", "Alice"));
 
-        // есть ли в потоке строка, длина которой больше 3
+        // РµСЃС‚СЊ Р»Рё РІ РїРѕС‚РѕРєРµ СЃС‚СЂРѕРєР°, РґР»РёРЅР° РєРѕС‚РѕСЂРѕР№ Р±РѕР»СЊС€Рµ 3
         boolean any1 = names2.stream().anyMatch(s->s.length()>3);
         System.out.println(any1);    // true
 
-        // все ли строки имеют длину в 3 символа
+        // РІСЃРµ Р»Рё СЃС‚СЂРѕРєРё РёРјРµСЋС‚ РґР»РёРЅСѓ РІ 3 СЃРёРјРІРѕР»Р°
         boolean all = names2.stream().allMatch(s->s.length()==3);
         System.out.println(all);    // false
 
-        // НЕТ ЛИ в потоке строки "Bill". Если нет, то true, если есть, то false
+        // РќР•Рў Р›Р РІ РїРѕС‚РѕРєРµ СЃС‚СЂРѕРєРё "Bill". Р•СЃР»Рё РЅРµС‚, С‚Рѕ true, РµСЃР»Рё РµСЃС‚СЊ, С‚Рѕ false
         boolean none = names2.stream().noneMatch(s->s=="Bill");
         System.out.println(none);   // true
 
         /**
-         * Методы min() и max() возвращают соответственно минимальное и максимальное значение
+         * РњРµС‚РѕРґС‹ min() Рё max() РІРѕР·РІСЂР°С‰Р°СЋС‚ СЃРѕРѕС‚РІРµС‚СЃС‚РІРµРЅРЅРѕ РјРёРЅРёРјР°Р»СЊРЅРѕРµ Рё РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
          * Optional<T> min(Comparator<? super T> comparator)
          * Optional<T> max(Comparator<? super T> comparator)
          */
@@ -107,23 +107,23 @@ public class Main {
         System.out.println(max.get());  // 9
 
         /**
-         * Optional - обёртка над результатом операции
-         * Метод orElse() позволяет определить альтернативное значение, которое будет возвращаться, если Optional не получит из потока какого-нибудь значения
-         * Метод orElseGet() позволяет задать функцию, которая будет возвращать значение по умолчанию
-         * Еще один метод - orElseThrow позволяет сгенерировать исключение, если Optional не содержит значения
-         * Метод ifPresent() определяет действия со значением в Optional, если значение имеется:
+         * Optional - РѕР±С‘СЂС‚РєР° РЅР°Рґ СЂРµР·СѓР»СЊС‚Р°С‚РѕРј РѕРїРµСЂР°С†РёРё
+         * РњРµС‚РѕРґ orElse() РїРѕР·РІРѕР»СЏРµС‚ РѕРїСЂРµРґРµР»РёС‚СЊ Р°Р»СЊС‚РµСЂРЅР°С‚РёРІРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ, РєРѕС‚РѕСЂРѕРµ Р±СѓРґРµС‚ РІРѕР·РІСЂР°С‰Р°С‚СЊСЃСЏ, РµСЃР»Рё Optional РЅРµ РїРѕР»СѓС‡РёС‚ РёР· РїРѕС‚РѕРєР° РєР°РєРѕРіРѕ-РЅРёР±СѓРґСЊ Р·РЅР°С‡РµРЅРёСЏ
+         * РњРµС‚РѕРґ orElseGet() РїРѕР·РІРѕР»СЏРµС‚ Р·Р°РґР°С‚СЊ С„СѓРЅРєС†РёСЋ, РєРѕС‚РѕСЂР°СЏ Р±СѓРґРµС‚ РІРѕР·РІСЂР°С‰Р°С‚СЊ Р·РЅР°С‡РµРЅРёРµ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+         * Р•С‰Рµ РѕРґРёРЅ РјРµС‚РѕРґ - orElseThrow РїРѕР·РІРѕР»СЏРµС‚ СЃРіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ РёСЃРєР»СЋС‡РµРЅРёРµ, РµСЃР»Рё Optional РЅРµ СЃРѕРґРµСЂР¶РёС‚ Р·РЅР°С‡РµРЅРёСЏ
+         * РњРµС‚РѕРґ ifPresent() РѕРїСЂРµРґРµР»СЏРµС‚ РґРµР№СЃС‚РІРёСЏ СЃРѕ Р·РЅР°С‡РµРЅРёРµРј РІ Optional, РµСЃР»Рё Р·РЅР°С‡РµРЅРёРµ РёРјРµРµС‚СЃСЏ:
          */
-        // список numbers пустой
+        // СЃРїРёСЃРѕРє numbers РїСѓСЃС‚РѕР№
         ArrayList<Integer> numbersEmpty = new ArrayList<Integer>();
         Optional<Integer> minEmpty = numbersEmpty.stream().min(Integer::compare);
-        if(minEmpty.isPresent()) // Возвращает true если объект != null
+        if(minEmpty.isPresent()) // Р’РѕР·РІСЂР°С‰Р°РµС‚ true РµСЃР»Рё РѕР±СЉРµРєС‚ != null
             System.out.println(minEmpty.get());  // java.util.NoSuchElementException
 
         minEmpty.ifPresent(v -> System.out.println(v));
 
 
         /**
-         * Метод - collect. Преобразует поток в список(Возможен вариант - toList)
+         * РњРµС‚РѕРґ - collect. РџСЂРµРѕР±СЂР°Р·СѓРµС‚ РїРѕС‚РѕРє РІ СЃРїРёСЃРѕРє(Р’РѕР·РјРѕР¶РµРЅ РІР°СЂРёР°РЅС‚ - toList)
          */
 
         List<String> phones = new ArrayList<String>();
@@ -169,18 +169,18 @@ public class Main {
 
         List<String> people3 = Arrays.asList("Tom","Bob", "Sam", "Kate", "Tim");
 
-        System.out.println("Последовательный поток");
+        System.out.println("РџРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅС‹Р№ РїРѕС‚РѕРє");
         people3.stream().filter(p->p.length()==3).forEach(System.out::println);
 
-        System.out.println("\nПараллельный поток");
+        System.out.println("\nРџР°СЂР°Р»Р»РµР»СЊРЅС‹Р№ РїРѕС‚РѕРє");
         people3.parallelStream().filter(p->p.length()==3).forEach(System.out::println);
 
         /**
-         * reduce - проводит бинарную операцию над элементами
+         * reduce - РїСЂРѕРІРѕРґРёС‚ Р±РёРЅР°СЂРЅСѓСЋ РѕРїРµСЂР°С†РёСЋ РЅР°Рґ СЌР»РµРјРµРЅС‚Р°РјРё
          */
 
         /*
-        Простой вывод суммы
+        РџСЂРѕСЃС‚РѕР№ РІС‹РІРѕРґ СЃСѓРјРјС‹
          */
         // Creating list of integers
         List<Integer> array = Arrays.asList(-2, 0, 4, 6, 8);
@@ -193,7 +193,7 @@ public class Main {
         System.out.println("The sum of all elements is " + sum);
 
         /*
-        Умножение чисел друг на друга
+        РЈРјРЅРѕР¶РµРЅРёРµ С‡РёСЃРµР» РґСЂСѓРі РЅР° РґСЂСѓРіР°
          */
         int product = IntStream.range(2, 8)
                 .reduce((num1, num2) -> num1 * num2)
@@ -203,7 +203,7 @@ public class Main {
         System.out.println("The product is : " + product);
 
         /*
-        String - конкатенация строк
+        String - РєРѕРЅРєР°С‚РµРЅР°С†РёСЏ СЃС‚СЂРѕРє
          */
         // String array
         String[] array1 = { "Geeks", "for", "Geeks" };
